@@ -1,0 +1,45 @@
+Developer Meeting Log
+
+Date: 2024-11-12
+Meeting Type: Nodes & Physics Module Meeting
+
+Present:
+
+Jacques Lucke
+Simon Thommes
+Hans Goudey
+Mattias
+Drew Medina
+Since the Last Meeting:
+
+The Blender conference
+Geometry Nodes Workshop 2
+Lots of bug fixing, limited development work
+Meeting Topics:
+
+User Documentation
+
+Many sections of documentation are still missing for the release.
+Gizmos are documented from the “gizmo user” perspective rather than from the perspective of creating gizmos.
+Subpanels
+
+General consensus that subpanels are a reasonable feature.
+Simon will allocate time to test this.
+Clip By Plane
+
+Plan appears solid; only “clipped” faces should be triangulated.
+Edge loop holes will be filled with a separate node. Although combining operations could improve performance, separation is preferable for now.
+Discussion on optimizing for multiple slices in one mesh.
+Hair Simulation Project Planning
+
+Jacques created a basic PBD solver prototype to enhance understanding.
+Consideration for more frequent video meetings.
+Jacques will focus on asset embedding, and Hans on socket shapes.
+Quality Project
+
+December will mainly focus on reviewing old bugs.
+Hans has planned some refactoring work.
+Triangulate Rewrite
+
+Currently stalled, though edge deduplication has been implemented.
+Jacques may review the PR to push forward.

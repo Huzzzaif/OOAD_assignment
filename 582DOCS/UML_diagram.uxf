@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>776</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>DataBlock 
+--
+-id: UUID
+-name: String
+--
++getDataType(): String
++validateData(): boolean
+--
+Responsibilities
+-- Define Base Data Structure
+-- Provide Data Management Interface
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>96</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>AddObjectOperator
+--
+-actionType: String
+-objectType: String
+-parameters: Map&lt;String, Any&gt;
+--
++execute(): void
++setParameters(parameters: Map&lt;String, Any&gt;): void 
++validateAction(): boolean
+--
+Responsibilities
+-- Trigger Object Creation 
+-- Capture User Input
+-- Validate Object Type and Parameters</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>328</y>
+      <w>280</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>ObjectFactory
+--
+-availableTypes: List&lt;String&gt;
+-sceneReference: Scene
+--
++createObject(objectType: String): Object
++registerObjectType(type: String): void
+--
+Responsibilities
+-- Object Creation Logic
+-- Register Object Types
+-- Reference Scene for Object Addition</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>536</y>
+      <w>280</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Object
+--
+-location: Vector3
+-rotation: Vector3
+-scale: Vector3
+-dataBlock: DataBlock
+--
++setLocation(location: Vector3): void
++setRotation(rotation: Vector3): void
++setScale(scale: Vector3): void
++attachDataBlock(data: DataBlock): void
+--
+Responsibilities
+-- Store Transformation Properties
+-- Link to DataBlock
+-- Apply Transformations</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>952</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Scene
+--
+-objects: List&lt;Object&gt;
+-camera: Camera
+-lights: List&lt;Light&gt;
+--
++addObject(obj: Object): void
++removeObject(obj: Object): void
++renderScene(): void
+--
+Responsibilities
+-- Manage Object Collection
+-- Handle Scene Rendering
+-- Control Object Interaction
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1648</x>
+      <y>472</y>
+      <w>280</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>MeshData
+--
+-vertices: List&lt;Vector3&gt;
+-edges: List&lt;Edge&gt;
+-faces: List&lt;Face&gt;
+--
++calculateNormals(): void
++validateMesh(): boolean
+--
+Responsibilities
+-- Store Mesh Data
+-- Manage Geometry Calculations
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1648</x>
+      <y>624</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CurveData
+--
+-controlPoints: List&lt;Vector3&gt;
+-interpolationType: String
+--
++generateCurve(): void
++validateCurve(): boolean
+--
+Responsibilities
+-- Store Curve Data
+-- Generate Curve Geometry
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1648</x>
+      <y>768</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>SurfaceData 
+--
+-surfaceType: String
+-patches: List&lt;SurfacePatch&gt;
+--
++generateSurface(): void
++validateSurface(): boolean
+--
+Responsibilities
+-- Store Surface Data
+-- Generate Surface Geometry
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1648</x>
+      <y>912</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>TextData
+--
+-textContent: String
+-font: Font
+--
++renderText(): void
++validateText(): boolean
+--
+Responsibilities
+-- Store Text Data
+-- Render Text
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>848</x>
+      <y>432</y>
+      <w>48</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Actor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>168</y>
+      <w>352</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;370.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1328</x>
+      <y>248</y>
+      <w>48</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Uses</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1328</x>
+      <y>456</y>
+      <w>64</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Creates</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1328</x>
+      <y>712</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>has</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1472</x>
+      <y>536</y>
+      <w>192</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;330.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1472</x>
+      <y>680</y>
+      <w>192</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1472</x>
+      <y>824</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1472</x>
+      <y>856</y>
+      <w>192</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>888</y>
+      <w>64</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Contains</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+</diagram>
